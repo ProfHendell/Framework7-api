@@ -1,0 +1,22 @@
+{
+    "name": "nt5/framework7-api",
+    "type": "project",
+    "description": "",
+    "authors": [
+        {
+            "name": "Hendell Jonathan Porras Perez",
+            "email": "hendelporras@hotmail.com",
+            "homepage": "https://nt5.pw",
+            "role": "Main Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Bulk\\": "src"
+        }
+    },
+    "license": "Apache-2.0",
+    "require": {
+        "php": ">=7.1"
+    }
+}
