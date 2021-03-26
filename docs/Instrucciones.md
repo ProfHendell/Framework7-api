@@ -14,7 +14,7 @@ Las clases principales son: (Estas están ubicadas en la carpeta `src/Database` 
 - `DatabaseConfig.php` Esta clase contiene los parámetros usados para la conexión PDO de PHP, por defecto al crear una instancia se crea con los siguientes valores (Puede ser cambiada usando el constructor o los métodos `setter`.)
 
 ---
-|                 |                  | 
+| Campo           | Valor            | 
 | --------------- |:----------------:|
 | **protocol**    | `mysql`          |
 | **server**      | `127.0.0.1`      |

@@ -20,13 +20,13 @@ if ($correo && $password) {
     $sql = "INSERT INTO usuarios (correo, password) VALUES (:correo, :password)";
 
     // Creamos un procedimiento que ejecuta el SQL con los valores de un arreglo
-    // el parametro correo es un texto plano
-    // El pararametro password es la contraseña encriptada
+    // el parámetro correo es un texto plano
+    // El parámetro password es la contraseña encriptada
     $stmt = $db->prepare_execute($sql, [
         'correo' => $correo,
         'password' => password_hash($password, PASSWORD_DEFAULT)
     ]);
-    // Se envia una respuesta en formato json
+    // Se enviá una respuesta en formato json
     $json = [];
     if ($stmt) {
         $json['ingreso'] =  true; // Verdadero si es correcto
