@@ -48,7 +48,7 @@ class DatabaseConfig {
         $this->server = ($server) ?: "127.0.0.1";
         $this->username = ($username) ?: "root";
         $this->password = ($password) ?: "";
-        $this->database = ($database) ?: "framework7_api";
+        $this->database = ($database) ?: "asistencia";
     }
 
     /**
