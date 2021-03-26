@@ -26,7 +26,7 @@ class DatabaseConfig {
     private $username;
 
     /**
-     * @var string Contraseña de conexion 
+     * @var string Contraseña de conexión 
      */
     private $password;
 
@@ -40,7 +40,7 @@ class DatabaseConfig {
      * @param string $protocol Protocolo de la base de datos
      * @param string $server Dirección del servidor de la base de datos
      * @param string $username Nombre de usuario de la base de datos
-     * @param string $password Contraseña de conexion
+     * @param string $password Contraseña de conexión
      * @param string $database Base de datos que se usara
      */
     public function __construct($protocol = NULL, $server = NULL, $username = NULL, $password = NULL, $database = NULL) {
