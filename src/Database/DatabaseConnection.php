@@ -24,7 +24,6 @@ class DatabaseConnection {
      * Regresa instancia de conexión de base de datos además de la instancia de configuración
      * @param DatabaseConfig $Config     
      * @param boolean $Connect
-     * @param Basics $Basics
      */
     public function __construct(DatabaseConfig $Config = NULL, $Connect = TRUE) {
         $this->Config = ($Config) ?: new DatabaseConfig(NULL, NULL, NULL, NULL, NULL);
@@ -74,7 +73,7 @@ class DatabaseConnection {
     }
 
     /**
-     * Regresa instancia de configuración usada en la conexion de la base de datos
+     * Regresa instancia de configuración usada en la conexión de la base de datos
      * @return DatabaseConfig
      */
     public function getConfig() {

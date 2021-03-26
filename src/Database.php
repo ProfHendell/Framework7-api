@@ -5,7 +5,7 @@ namespace Bulk;
 use Bulk\Database\DatabaseConnection;
 
 /**
- * @todo Documentacion
+ * @todo Documentación
  * Clase principal que controla y proporciona todos los métodos de la base de datos
  */
 class Database
