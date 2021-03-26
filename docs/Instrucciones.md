@@ -135,3 +135,45 @@ Esto nos mostrara una lista de los directorios del proyecto; podemos probar dar 
 
 
 Es posible que tengamos un error de ejecución debido a que no tenemos instalada la base de datos dentro del servidor MySQL.
+
+# Instalar la base de datos dentro de MySQL
+
+**Recuerda tener iniciado los servicios de `Apache` y `MySQL` dentro del XAMPP.**
+
+Para evitar ese error de ejecución que tenemos al entrar al archivo `api.php` tenemos que crear una base de datos valida que el sistema pueda acceder, por defecto el intenta conectar usando las credenciales y la configuración anterior.
+
+- Primero abrimos el panel de phpMyAdmin, lo podemos hacer desde el mismo panel de control del XAMPP, haciendo click en `Admin` en el apartado de `MySQL`, esto nos abrirá una ventana en nuestro navegador, o podemos ingresar directamente desde `http://localhost/phpmyadmin`
+
+
+_Por defecto el usuario de phpMyAdmin es `root` sin ninguna contraseña_
+
+
+- Dentro de phpMyAdmin, en la parte izquierda veremos una lista de las bases de datos que tenemos, hacemos click en **Nueva**, veremos un menu con el texto _Crear base de datos_, escribimos un nombre por ejemplo este proyecto al ser un sistema de asistencia podemos nombrarla de esa manera. `asistencia` y click en **Crear**
+
+- Ademas de crear la base de datos necesitamos indicarle a la conexión que se conecte específicamente a esta base de datos, notaras que por defecto el sistema se intentara conectar a una base de datos llamada `framework7_api`, la cual no existe, para cambiar eso:
+
+  - Abrimos el archivo `src/Database/DatabaseConfig.php`
+  - Bajamos a al método constructor `__construct`
+
+```php
+    public function __construct($protocol = NULL, $server = NULL, $username = NULL, $password = NULL, $database = NULL) {
+        $this->protocol = ($protocol) ?: "mysql";
+        $this->server = ($server) ?: "127.0.0.1";
+        $this->username = ($username) ?: "root";
+        $this->password = ($password) ?: "";
+        $this->database = ($database) ?: "framework7_api";
+    }
+```
+
+Notaras que el apartado `database` esta haciendo referencia a `framework7_api`; lo cambiamos por `asistencia`.
+
+```php
+        $this->database = ($database) ?: "asistencia";
+```
+
+El resto lo podemos dejar tal como esta.
+
+
+Ahora regresamos a nuestro navegador en `http://localhost/Framework7-api/api.php`
+
+Una ves realizado esto notaremos solo la información de conexión de la base de datos sin ningún `warning` o `fatal error`.
