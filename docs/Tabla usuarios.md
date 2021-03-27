@@ -94,7 +94,7 @@ Notaras que la url esta codificada de la siguiente manera:
 - El signo de `?` para indicar que vamos a escribir parámetro.
 - El nombre los parámetros `nombre` igualado a un valor `=` en este caso `hendelporras@hotmail.com` y la `password` separado por el símbolo `&`, en caso de tener mas parámetros simplemente los separaríamos con el símbolo `&` y siempre teniendo cuidado que el primer símbolo luego del nombre del archivo tiene que ser `?`
 
-> Si todo esta correcto tendriamos que ver que al momento de ingresar al url veremos un json con
+> Si todo esta correcto tendríamos que ver que al momento de ingresar al url veremos un json con
 
 ```json
 {
