@@ -2,6 +2,8 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
+header('Access-Control-Allow-Origin: *');
+
 use Bulk\Database;
 
 $db = new Database();
@@ -21,6 +23,11 @@ $json = [];
 // Se comprueba la contraseña del parámetro y la contraseña de la base de datos, si es verdadero es login correcto.
 if ($stmt && password_verify($password, $stmt->password)) {
     $json['valid'] = true;
+    $json['usuario'] = [
+        'id' => $stmt->id_usuario,
+        'tipo' => $stmt->tipo,
+        'correo' => $stmt->correo
+    ];
 } else {
     $json['valid'] = false;
     $json['error'] = 'Usuario o contraseña incorrecta';
