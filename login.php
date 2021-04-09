@@ -25,8 +25,8 @@ if ($stmt && password_verify($password, $stmt->password)) {
     $json['valid'] = true;
     $json['usuario'] = [
         'id' => $stmt->id_usuario,
-        'tipo' => $stmt->tipo,
-        'correo' => $stmt->correo
+        'correo' => $stmt->correo,
+        'tipo' => $stmt->tipo
     ];
 } else {
     $json['valid'] = false;
