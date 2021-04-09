@@ -4,6 +4,8 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 use Bulk\Database;
 
+header('Access-Control-Allow-Origin: *');
+
 $db = new Database();
 
 // GET - POST - AJAX
