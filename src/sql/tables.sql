@@ -42,8 +42,20 @@ CREATE TABLE `grupos` (
 `id_docente` INT NOT NULL,
 `trimestre` INT NOT NULL,
 PRIMARY KEY (`id_grupo`),
+INDEX `cod_grupo` (`cod_grupo`),
 CONSTRAINT FOREIGN KEY (`id_carrera`) REFERENCES `carreras` (`id_carrera`) ON UPDATE CASCADE ON DELETE CASCADE,
 CONSTRAINT FOREIGN KEY (`id_clase`) REFERENCES `clases` (`id_clase`) ON UPDATE CASCADE ON DELETE CASCADE,
 CONSTRAINT FOREIGN KEY (`id_estudiante`) REFERENCES `estudiante` (`id_estudiante`) ON UPDATE CASCADE ON DELETE CASCADE,
 CONSTRAINT FOREIGN KEY (`id_docente`) REFERENCES `docente` (`id_docente`) ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+CREATE TABLE `asistencias` (
+	`id_asistencia` INT NOT NULL AUTO_INCREMENT,
+	`id_estudiante` INT NOT NULL,
+	`grupo` VARCHAR(50) NOT NULL,
+	`presente` TINYINT(4) NOT NULL,
+	`creado_el` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY (`id_asistencia`)
+	CONSTRAINT FOREIGN KEY (`id_estudiante`) REFERENCES `estudiante` (`id_estudiante`) ON UPDATE CASCADE ON DELETE CASCADE,
+	CONSTRAINT FOREIGN KEY (`grupo`) REFERENCES `grupos` (`cod_grupo`) ON UPDATE CASCADE ON DELETE CASCADE
 );
